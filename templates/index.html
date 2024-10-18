@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Legalpack Analyzer</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+  <body>
+    <h1>Legal Pack Analyzer</h1>
+
+    <div class="dropdown">
+      <button
+        class="btn btn-outline-secondary btn-sm dropdown-toggle"
+        id="model"
+        type="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        Groq: llama3-8b-8192
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Action</a></li>
+        <li><a class="dropdown-item" href="#">Another action</a></li>
+        <li><a class="dropdown-item" href="#">Something else here</a></li>
+      </ul>
+    </div>
+
+    <div class="dropdown">
+      <button
+        class="btn btn-outline-secondary btn-sm dropdown-toggle"
+        id="analysis-mode"
+        type="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        Verbose Permits Analysis
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Action</a></li>
+        <li><a class="dropdown-item" href="#">Another action</a></li>
+        <li><a class="dropdown-item" href="#">Something else here</a></li>
+      </ul>
+    </div>
+
+    <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+      <label class="btn btn-outline-secondary btn-sm">
+        Select file
+        <input id="file" name="file" type="file" style="display: none" />
+      </label>
+      <button
+        disabled
+        class="btn btn-outline-secondary btn-sm"
+        id="file-selected"
+      >
+        No file selected
+      </button>
+    </div>
+
+    <div class="card" id="prompt">
+      <div class="card-header">Prompt</div>
+      <textarea
+        rows="5"
+        placeholder="Enter additional context here."
+        id="prompt-field"
+      ></textarea>
+    </div>
+
+    <button class="btn btn-outline-secondary btn-sm" id="run-button">
+      Run
+    </button>
+
+    <div class="card" id="output">
+      <div class="card-header">Analysis</div>
+      <div class="card-body" id="output-body"></div>
+    </div>
+    <script src="../static/js/script.js"></script>
+  </body>
+</html>

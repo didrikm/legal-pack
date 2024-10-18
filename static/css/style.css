@@ -1,0 +1,24 @@
+body {
+  background-color: black;
+  font-size: small;
+}
+
+body > * {
+  margin: 1rem 0 0 2rem;
+}
+
+#output {
+  max-width: 80ch;
+}
+
+#prompt {
+  max-width: 80ch;
+}
+
+.btn-outline-secondary {
+  color: turquoise;
+}
+
+#file-selected {
+  color: #fbfbfb;
+}
