@@ -1,4 +1,4 @@
-import os 
+import os, re 
 from PyPDF2 import PdfReader
 from groq import Groq
 
@@ -47,6 +47,7 @@ analysis. Words in brackets will now be treated as previously described.
         max_tokens = 1024,
         )
     response = response.to_dict()['choices'][0]['message']['content'].replace('\n', '<br />')
+    response = re.sub(r'\*\*(.*?)\*\*', r'<strong>\1</strong>', response)
     return response
 
 def parsePdf(file):
